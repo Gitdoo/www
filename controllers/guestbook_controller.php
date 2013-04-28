@@ -10,6 +10,12 @@ class GuestbookController extends Controller{
 		$this->model = new GuestbookModel();
 		$this->view = new View();
 	}
+	//Метод, який здійснює пошук
+	function search()
+	{
+		$data=$this->model->model_search();
+		$this->view->generate('search.tpl', 'main.tpl', $data);
+	}
 	/**
 	* метод add(),який генерує форму для введення даних
 	*  

@@ -1,5 +1,7 @@
 <?php 
 if(!empty($data)){
+	if(is_array($data))
+    {
 	foreach($data as $temp)
 	{
 		$local=$temp['id'];
@@ -31,13 +33,20 @@ if(!empty($data)){
 <?php 
 		}
 	}
+    
+    }
+    else
+    {
+    	echo $data;
+    }
+    
 ?>
 		
 <?php
 	}
 	else
 	{
-	echo "Немає записів";
+	echo "Нічого не знайдено за вашим запитом";
 	}
 ?>
 

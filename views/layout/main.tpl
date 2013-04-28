@@ -12,7 +12,17 @@
 	Гостьова Книга!!! 
 	Гостьова Книга!!!	
 	Гостьова Книга!!! 
-	Гостьова Книга!!!	
+	Гостьова Книга!!!
+    <br>
+		<div id="search" style="float:right;top:50px;">
+        <form action="/guestbook/search" method="post">
+         
+        <input type='text' name="search"><input type='submit' value="Пошук">
+        <br>
+        (Дата у форматі yyyy-mm-dd hh:mm:ss) 
+        </form>
+        </div>
+		
 	</div>
 
 <div id="conteiner" style="float:left;padding:10px;margin:20px;width:95%;height:auto;">

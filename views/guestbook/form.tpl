@@ -13,5 +13,9 @@
 <br>
 <textarea name="long_text" rows=8 cols=40  ><?php echo $data['long_text'];?></textarea>
 <br>
+<b>Теги(розділювач для множинного вводу - ",")</b>
+<br>
+<textarea name="tags" rows=4 cols=40  ><?php echo $data['tags'];?></textarea>
+<br>
 <input type=submit value="Додати" id="addButton">
 </form>

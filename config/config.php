@@ -9,5 +9,6 @@
 	require_once "sql/gbook.php";
 	require_once "sql/user.php";
 	require_once "sql/group_user.php";
-	require_once "sql/pass_recovery.php";
+	require_once "sql/tags.php";
+	require_once "sql/post_tags.php";
 ?>

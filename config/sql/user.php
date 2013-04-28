@@ -5,8 +5,8 @@ mysql_query(" CREATE TABLE IF NOT EXISTS `users`(
   `name` VARCHAR(15),
   `email` VARCHAR(30),
   `password` TEXT,
-  `create_time` INT NOT NULL,
-  `last_time` INT ,
+  `create_time` TIMESTAMP,
+  `last_time` TIMESTAMP ,
   `hashode` VARCHAR(60),
   `expires_time` INT,
   PRIMARY KEY(id)

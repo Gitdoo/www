@@ -10,7 +10,7 @@ class UserModel extends Model{
 	* і робить незначну валідацію
 	*/
 	private function update()
-	{	$times = time();
+	{	$times=date("YmdHis",time());
 		$id = $_SESSION['user']['id'];
 		$sql="UPDATE `users` SET `last_time`='$times' WHERE `id`='$id';";
 		$query=mysql_query($sql);
@@ -127,7 +127,7 @@ class UserModel extends Model{
 				if(!$query) return $error="Помилка при підключенні до бази даних";
 				$href=$_SERVER['SERVER_NAME']."/user/token/".$hash;
 				
-				return $subject="<a href='".$href."'>".$href."</a>";
+				$subject="<a href='".$href."'>".$href."</a>";
 				$header= "Content-type: text/html; charset=utf-8";
 				mail($_POST['login'],"Відновлення паролю",$subject,$header);
 				$error="Посилання на відновлення паролю відпавлено на ваш email!!";
@@ -248,7 +248,7 @@ class UserModel extends Model{
 			$flag=true;
 		}
 		$login=$_POST['email'];
-		if ( !preg_match("/^[a-zA-Z1-9]+[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/i", $login) ) $error.= "Ви не пройшли валідацію!!!";
+		if ( !preg_match("/^[a-zA-Z1-9]+[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/i", $login) ) return  "Ви не пройшли валідацію!!!";
 		$sql="SELECT `id` FROM `users` WHERE email='$login';";
 		$query = mysql_query($sql);
 		$data = mysql_fetch_assoc($query);
